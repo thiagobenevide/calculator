@@ -42,7 +42,14 @@ section{
     font-size: 4rem;
     padding: 5px;
     height: 80px;
-    text-align: end;
+    
+    background-color: #fff;
+
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: end;
 
     border-radius: 8px;
     border: 0;
@@ -67,6 +74,7 @@ button{
     border-radius: 5px;
     border: 0;
     cursor: pointer;
+    color: #000;
 }
 
 
@@ -138,5 +146,9 @@ button{
 
     #lines_calculator{
         margin-top: 15px;
+    }
+
+    #screen{
+        font-size: 2.9rem;
     }
 }

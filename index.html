@@ -11,38 +11,41 @@
 <body>
     <main>
         <section>
-            <input id="screen" type="number">
+             <div id="screen"></div>
             <div id="lines_calculator">
                 <div class="line">
-                    <button class="number">7</button>
-                    <button class="number">8</button>
-                    <button class="number">9</button>
-                    <button class="options">C</button>
-                    <button class="options">D</button>
+                    <button class="number" onclick="insert('7')">7</button>
+                    <button class="number" onclick="insert('8')">8</button>
+                    <button class="number" onclick="insert('9')">9</button>
+                    <button class="options" onclick="clean()">C</button>
+                    <button class="options" onclick="dell()">D</button>
                 </div>
                 <div class="line">
-                    <button class="number">4</button>
-                    <button class="number">5</button>
-                    <button class="number">6</button>
-                    <button class="operators">%</button>
-                    <button class="operators">/</button>
+                    <button class="number" onclick="insert('4')">4</button>
+                    <button class="number" onclick="insert('5')">5</button>
+                    <button class="number" onclick="insert('6')">6</button>
+                    <button class="operators" onclick="calculate('/100')">^</button>
+                    <button class="operators" onclick="calculate('/')">/</button>
                 </div>
                 <div class="line">
-                    <button class="number">1</button>
-                    <button class="number">2</button>
-                    <button class="number">3</button>
-                    <button class="operators">X</button>
-                    <button class="operators">-</button>
+                    <button class="number" onclick="insert('1')">1</button>
+                    <button class="number" onclick="insert('2')">2</button>
+                    <button class="number" onclick="insert('3')">3</button>
+                    <button class="operators" onclick="calculate('*')">X</button>
+                    <button class="operators" onclick="calculate('-')">-</button>
                 </div>
                 <div class="line">
-                    <button class="number">0</button>
+                    <button class="number"  onclick="insert('0')">0</button>
                     <button class="pointer">.</button>
                     <button class="pointer">,</button>
-                    <button id="equality">=</button>
-                    <button class="operators">+</button>
+                    <button id="equality" onclick="equal()">=</button>
+                    <button class="operators" onclick="calculate('+')">+</button>
                 </div>
             </div>
         </section>
     </main>
+
+    <script src="script-calculator.js"></script>
+    <script src="test.js"></script>
 </body>
 </html>
