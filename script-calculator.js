@@ -1,6 +1,7 @@
 var listNumbers = []
 var expression = []
 
+//Insert number
 
 function insert(number){
     let screen = document.querySelector("#screen").innerHTML
@@ -11,6 +12,8 @@ function insert(number){
         alert("Caixa de número cheia: Apague para adicionar!")
     }
 }
+
+//Delete element
 
 function dell(){
     let screen = document.querySelector("#screen").innerHTML
@@ -23,25 +26,27 @@ function dell(){
     }
 }
 
+//Clean all
+
 function clean(){
     let screen = document.querySelector("#screen").innerHTML
     if (screen.length == ""){
         alert("Caixa de números vazia, não tem o que limpar!")
-        listNumbers = []
-        expression = []
+        cleanArrays()
     }else if (screen.length > 0){
         let cleanScreen = ""
         document.querySelector("#screen").textContent = cleanScreen
-        listNumbers = []
-        expression = []
+        cleanArrays()
     }
 }
 
+//Calculate operation
+
 function calculate(operation){
-    let screen = document.querySelector("#screen").innerHTML   
+    let screen = validatePointer()
     listNumbers.push(screen)
     listNumbers.push(operation)
-    
+
     let cleanScreen = ""
     document.querySelector("#screen").textContent = cleanScreen
 
@@ -49,15 +54,47 @@ function calculate(operation){
 
 }
 
+//Button equal
+
 function equal(){
-    listNumbers.pop()
+    let screen = validatePointer()
+    if (screen.length > 0){
+        listNumbers.push(screen)    
+    }
+    
+    console.log(listNumbers)
     
     for(let i = 0; i < listNumbers.length; i++){
         expression += listNumbers[i]
     }
 
     let result = eval(expression)
-    document.querySelector("#screen").innerHTML = result
+    let information = resultOperation(result)
+
+    document.querySelector("#screen").innerHTML = information
+    cleanArrays()
+}
+
+//Result Screen
+
+function resultOperation(result){
+    if (result.toString().length > 15){
+        return "Resultado Grande"
+    }else if (result.toString().length <= 15){
+        return result
+    }
+}
+
+//Clean Arrays
+
+function cleanArrays(){
     listNumbers = []
     expression = []
+}
+
+function validatePointer(){
+    let screen = document.querySelector("#screen").innerHTML
+    screen = screen.replace(",",".")
+    console.log(screen)
+    return screen
 }

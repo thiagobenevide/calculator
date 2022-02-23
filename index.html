@@ -24,20 +24,20 @@
                     <button class="number" onclick="insert('4')">4</button>
                     <button class="number" onclick="insert('5')">5</button>
                     <button class="number" onclick="insert('6')">6</button>
-                    <button class="operators" onclick="calculate('/100')">^</button>
+                    <button class="operators" onclick="calculate('**2','')">^</button>
                     <button class="operators" onclick="calculate('/')">/</button>
                 </div>
                 <div class="line">
                     <button class="number" onclick="insert('1')">1</button>
                     <button class="number" onclick="insert('2')">2</button>
                     <button class="number" onclick="insert('3')">3</button>
-                    <button class="operators" onclick="calculate('*')">X</button>
+                    <button class="operators" onclick="calculate('*')">x</button>
                     <button class="operators" onclick="calculate('-')">-</button>
                 </div>
                 <div class="line">
                     <button class="number"  onclick="insert('0')">0</button>
-                    <button class="pointer">.</button>
-                    <button class="pointer">,</button>
+                    <button class="pointer" onclick="insert('.')">.</button>
+                    <button class="pointer" onclick="insert(',')">,</button>
                     <button id="equality" onclick="equal()">=</button>
                     <button class="operators" onclick="calculate('+')">+</button>
                 </div>
@@ -46,6 +46,5 @@
     </main>
 
     <script src="script-calculator.js"></script>
-    <script src="test.js"></script>
 </body>
 </html>
