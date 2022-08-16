@@ -78,11 +78,10 @@ function equal(){
 //Result Screen
 
 function resultOperation(result){
-    if (result.toString().length > 15){
-        return "Resultado Grande"
-    }else if (result.toString().length <= 15){
-        return result
+    if (result.toString().length < 5){
+        return result.toFixed(2)
     }
+    return result
 }
 
 //Clean Arrays
